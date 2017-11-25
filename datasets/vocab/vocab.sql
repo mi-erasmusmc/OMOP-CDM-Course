@@ -67,6 +67,21 @@ CREATE TABLE concept_ancestor (
 )
 ;
 
+CREATE TABLE films (
+  id                    INTEGER     PRIMARY KEY,
+  title                 VARCHAR,
+  release_year          INTEGER,
+  country               VARCHAR,
+  duration              INTEGER,
+  language              VARCHAR,
+  certification         VARCHAR,
+  gross                 BIGINT,
+  budget                BIGINT
+);
+
+-- Copy over data from CSVs
+\copy films FROM 'data/vocab/films.csv' DELIMITER ',' CSV HEADER;
+
 -- Copy over data from CSVs
 \copy concept FROM 'data/vocab/concept.csv' DELIMITER ',' CSV HEADER;
 
