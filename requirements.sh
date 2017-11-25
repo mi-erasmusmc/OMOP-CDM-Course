@@ -10,4 +10,4 @@ mkdir -p $REPO_PATH/data
 wget "https://s3.amazonaws.com/assets.datacamp.com/production/course_6000/datasets/vocab.zip"
 unzip vocab.zip -d $REPO_PATH/data
 
-service postgresql start   && sudo -u postgres dropdb -O repl vocab && sudo -u postgres createdb -O repl vocab   && cd $REPO_PATH   && sudo -u postgres psql vocab < data/vocab/vocab.sql   && service postgresql stop
+service postgresql start   && sudo -u postgres dropdb vocab && sudo -u postgres createdb -O repl vocab   && cd $REPO_PATH   && sudo -u postgres psql vocab < data/vocab/vocab.sql   && service postgresql stop
