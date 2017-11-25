@@ -35,6 +35,18 @@ Standardized vocabulary
 ************************/
 
 
+CREATE TABLE films (
+  id                    INTEGER     PRIMARY KEY,
+  title                 VARCHAR,
+  release_year          INTEGER,
+  country               VARCHAR,
+  duration              INTEGER,
+  language              VARCHAR,
+  certification         VARCHAR,
+  gross                 BIGINT,
+  budget                BIGINT
+);
+
 CREATE TABLE concept (
   concept_id			INTEGER			NOT NULL,
   concept_name			VARCHAR(255)	NOT NULL,
@@ -67,17 +79,6 @@ CREATE TABLE concept_ancestor (
 )
 ;
 
-CREATE TABLE films (
-  id                    INTEGER     PRIMARY KEY,
-  title                 VARCHAR,
-  release_year          INTEGER,
-  country               VARCHAR,
-  duration              INTEGER,
-  language              VARCHAR,
-  certification         VARCHAR,
-  gross                 BIGINT,
-  budget                BIGINT
-);
 
 -- Copy over data from CSVs
 \copy films FROM 'data/vocab/films.csv' DELIMITER ',' CSV HEADER;
