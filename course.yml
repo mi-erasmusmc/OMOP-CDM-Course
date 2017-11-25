@@ -7,5 +7,4 @@ time_needed: 1 hour
 programming_language: sql
 from: postgresql-base-prod:22
 datasets:
-  films.zip: Films
-  vocab.zip: Vocab
+  vocab1.zip: vocab1
