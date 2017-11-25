@@ -66,3 +66,6 @@ CREATE TABLE concept_ancestor (
   max_levels_of_separation	INTEGER		NOT NULL
 )
 ;
+
+-- Copy over data from CSVs
+\copy concept FROM 'data/vocab/concept.csv' DELIMITER ',' CSV HEADER;
