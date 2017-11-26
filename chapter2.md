@@ -53,9 +53,13 @@ As you can see in the table above the concept\_ids in the CONCEPT table are not 
 --- type:PureMultipleChoiceExercise lang:sql xp:50 skills:1 key:a44bac8fdd
 ## Athena
 
-<p><center><img src="https://github.com/mi-erasmusmc/OMOP-CDM-Course/raw/master/img/athena.png" alt="Athena" width="550" height="400"></center></p>
+<p><img src="https://github.com/mi-erasmusmc/OMOP-CDM-Course/raw/master/img/Athena.png" alt="Athena" width="150" height="60"></p>
 
-Before we will run our own queries we like to introduce a very nice tool called <a href="http://athena.ohdsi.org" style="color:black">CONCEPT table</a>. This tool shows you the current vocabularies maintained by OHDSI.
+Before we will run our own queries we like to introduce a very nice tool called ATHENA you can find <a href="http://athena.ohdsi.org" style="color:black">here</a>. This tool shows you the current vocabularies maintained by OHDSI. 
+
+If you create an account it will allow you to download a new version of the vocabulary (no need to do this now, you can do this later if you want to). It will nicely archive all your previous downloads.
+
+Let's explore the searhing functionality a bit. Search for 'acute myocardial infarction' and use the filters on the left to show only the Standard Concepts in the domain 'Condition'
 
 *** =possible_answers
 

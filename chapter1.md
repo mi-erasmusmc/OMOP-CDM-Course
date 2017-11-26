@@ -32,7 +32,7 @@ The current version of the CDM (v5.2) is shown in the figure below.
 
 <p><center><img src="https://github.com/PRijnbeek/VocabularyCourse/raw/master/img/omop-cdm.png" alt="OMOP-CDM" width="550" height="400"></center></p>
 
-As you can see the OMOP-CDM is divided in multiple sections. Clinical Data is stored in the Standardized Clinical Data section on the left (light blue). The Standardized Vocabulary tables are group in the orange box on the right.
+As you can see the OMOP-CDM is divided in multiple sections. Clinical Data is stored in the Standardized Clinical Data section on the left (light blue). The clinical data tables are based on the data domains, e.g. condition, measurement. The Standardized Vocabulary tables are group in the orange box on the right.
 
 Which of the following statements is true?
 
