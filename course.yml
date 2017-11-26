@@ -1,10 +1,7 @@
-title: OMOP CDM Course
-description: This is an automatically generated demo course which will help you on
-  your way to create an awesome DataCamp course .
-university: DataCamp
-difficulty_level: 2
-time_needed: 1 hour
-programming_language: sql
-from: postgresql-base-prod:22
-datasets:
-  vocabulary.zip: Vocabulary
+title                : OMOP Common Data Model and Standardized Vocabularies
+description          : This course aims to improve your understanding of the OMOP Common Data Model (OMOP-CDM) and its Standardized Vocabularies. Using very simple SQL queries we will help you to better understand the conventions of the OMOP-CDM and its table structure. We start with an introductory video about the Observation Health Data Sciences and Informatics (OHDSI) initiative and will then dive into the OMOP-CDM and the Standardize Vocabularies.<p><center><img src="https://github.com/PRijnbeek/VocabularyCourse/raw/master/img/omop-cdm.png" alt="OMOP-CDM" width="550" height="400"></center></p><p>For more information about OHDSI have a look at the <a href="https://ohdsi/org">OHDSI website</a>. Detailed information about the data model can be found on the <a href="https://github.com/OHDSI/CommonDataModel/wiki/">Github Wiki</a>.</p><p>Enjoy the Journey!</p>
+university           : Erasmus Medical Center, Rotterdam, The Netherlands
+difficulty_level     : 2
+time_needed          : 1 hour
+programming_language : sql
+from                 : 'postgresql-base-prod:22'
