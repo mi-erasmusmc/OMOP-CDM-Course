@@ -24,7 +24,6 @@ In the table below you can find a description of the tables we will discuss in m
 
 More detailed information about the data model can be found on the <a href="https://github.com/OHDSI/CommonDataModel/wiki/" style="color:black">Github Wiki</a>
 
-
 We will ask you to run a number of queries to train you in using these tables. You should have received seperate instructions on how to connect to our simulated database containing the latest vocabulary and data of 1000 patients (SYNPUF1000), or you can use your own CDM if you have access to it during the course.
 
 <b>Exercise</b>
@@ -48,24 +47,6 @@ As you can see in the table above the concept\_ids in the CONCEPT table are not 
 - We do perform quality control steps but this is not the reason for defining our own codes.
 
 
-
-
---- type:PureMultipleChoiceExercise lang:sql xp:50 skills:1 key:a44bac8fdd
-## Athena
-
-<p><img src="https://github.com/mi-erasmusmc/OMOP-CDM-Course/raw/master/img/Athena.png" alt="Athena" width="150" height="60"></p>
-
-Before we will run our own queries we like to introduce a very nice tool called ATHENA you can find <a href="http://athena.ohdsi.org" style="color:black">here</a>. This tool shows you the current vocabularies maintained by OHDSI. 
-
-If you create an account it will allow you to download a new version of the vocabulary (no need to do this now, you can do this later if you want to). It will nicely archive all your previous downloads.
-
-Let's explore the searhing functionality a bit. Search for 'acute myocardial infarction' and use the filters on the left to show only the Standard Concepts in the domain 'Condition'
-
-*** =possible_answers
-
-*** =hint
-
-*** =feedbacks
 
 --- type:PureMultipleChoiceExercise lang:sql xp:50 skills:1 key:9eac36b5d7
 ## Your First Query
@@ -137,16 +118,29 @@ What is the vocabulary\_id of this concept?
 
 
 --- type:PureMultipleChoiceExercise lang:sql xp:50 skills:1 key:6654df47a2
-## VOCABULARY Table
-The VOCABULARY table includes a list of the Vocabularies collected from various sources or created de novo by the OMOP community. This reference table is populated with a single record for each Vocabulary source and includes a descriptive name and other associated attributes for the Vocabulary.
+## Vocabulary Table
+The VOCABULARY table includes the list of the included Vocabularies. This reference table is populated with a single record for each Vocabulary source and includes a descriptive name and other associated attributes for the Vocabulary.
 
+Run the following query to see the content of this table:
 
+```
+SELECT * 
+FROM vocabulary
+```
+
+Which of the following statments is not true:
 
 *** =possible_answers
+
+- The vocabulary\_id=None shows the version of the vocab that is loaded
+- [OMOP does not invent new concepts but is only using concepts from other terminology systems]
+- The RxNorm Extension Vocabulary contains clinical drugs not on the American market
+- The current list of vocabularies is noy covering all concept used in the world yet
 
 *** =hint
 
 *** =feedbacks
+
 
 --- type:PureMultipleChoiceExercise lang:sql xp:50 skills:1 key:c91862a449
 ## Search by concept_name
@@ -175,6 +169,7 @@ SELECT *
 FROM concept 
 WHERE LOWER(concept_name) like '%fibrillation%';
 ```
+
  Let's try to find the standard concept\_id for the clinical finding Asthma in the vocabulary. Try to find this using both methods described above. You will see that if you do not restrict to the concept_class_id = 'Clinical Finding' (AND concept_class_id = 'Clinical Finding') you can get multple standard concepts!
  
  What is the code we asked for?
@@ -193,3 +188,72 @@ WHERE LOWER(concept_name) like '%fibrillation%';
 - This is the answer to a question located in the measurement table. 
 
 
+--- type:PureMultipleChoiceExercise lang:sql xp:50 skills:1 key:4a115d0cb3
+## Concept Relationship
+
+Records in the CONCEPT\_RELATIONSHIP table define semantic relationships between Concepts. Such relationships can be hierarchical or lateral.
+The figure below shows the concept relationships for the condition domain.
+
+<center><img src="https://github.com/mi-erasmusmc/OMOP-CDM-Course/raw/master/img/hierarchy1.png" alt="Concept Relationship" width="550" height="400"></center>
+
+This shows that all non-standard vocabularies map to the Standard SNOMED vocabulary at different levels. The figure also shows the MEDRA vocabulary which is used for a higher 'Classification' level (denoted as 'C' in the standard_concept field in the concept table).
+
+There are different types of relationships defined in the vocabulary. For example the 'Maps to' relationship defines to witch Standard Concept\_id the codes mappes to. You can explore all the relationships by running the following query:
+
+```
+SELECT * FROM relationship;
+```
+
+Let's use this new insight to find to which standard code the code '427.31' mappes. You can do this for example by first finding the concept\_id using:
+```
+SELECT * FROM concept WHERE concept_code = '427.31';
+```
+
+You can the use the concept_relationshop table find its relationships.
+
+```
+SELECT * FROM concept_relationship WHERE concept_id_1 = 44821957;
+```
+
+*** =possible_answers
+
+*** =hint
+
+*** =feedbacks
+
+--- type:PureMultipleChoiceExercise lang:sql xp:50 skills:1 key:a44bac8fdd
+## Athena
+
+<p><img src="https://github.com/mi-erasmusmc/OMOP-CDM-Course/raw/master/img/Athena.png" alt="Athena" width="150" height="60"></p>
+
+Finally, we like to make you aware a very nice tool called ATHENA you can find <a href="http://athena.ohdsi.org" style="color:black">here</a>. This tool shows you the current vocabularies maintained by OHDSI. 
+
+If you create an account it will allow you to download a new version of the vocabulary (no need to do this now, you can do this later if you want to). It will nicely archive all your previous downloads.
+
+Let's explore the searching functionality a bit. Search for 'type 2 diabetes' and use the filters on the left to show only the Standard Concepts in the domain 'Condition'. You see many standard codes here which represent different levels in the hierarchy. 
+
+Search for '201826' and click on it. You can now see the hierarchy and related concepts retrieved from the vocabulary tables. 
+
+Try to find some other concepts you are interested in and play around with the tool.
+
+<b> Question: </b>
+
+What is the ICD-10CM standard\_code for 'type 2 diabetes'? Can you find this by using filter or the hierachy and related_concepts information of the standard concept?
+
+
+*** =possible_answers
+
+- [E11]
+- 1567956
+- 250.00
+- 201826
+*** =hint
+
+
+*** =feedbacks
+
+- Correct
+- This the concept\_id
+- ICD-10CM?
+- This is the standard concept\_id
+- 

@@ -30,7 +30,7 @@ Most importantly, we have an active community that has done many data conversion
 
 The current version of the CDM (v5.2) is shown in the figure below.
 
-<p><center><img src="https://github.com/PRijnbeek/VocabularyCourse/raw/master/img/omop-cdm.png" alt="OMOP-CDM" width="550" height="400"></center></p>
+<p><center><img src="https://github.com/mi-erasmusmc/OMOP-CDM-Course/raw/master/img/omop-cdm.png" alt="OMOP-CDM" width="550" height="400"></center></p>
 
 As you can see the OMOP-CDM is divided in multiple sections. Clinical Data is stored in the Standardized Clinical Data section on the left (light blue). The clinical data tables are based on the data domains, e.g. condition, measurement. The Standardized Vocabulary tables are group in the orange box on the right.
 
@@ -64,7 +64,7 @@ skills: 1
 ```
 Let's see if you know which tables you need to query to find your data elements of interest. We will test this by asking you to name all the tables you need to include in your query for a certain research question. We will not go into the details of really creating the full query here. (MORE OF THESE TO ADD WITH PATRICK)
 
-<p><center><img src="https://github.com/PRijnbeek/VocabularyCourse/raw/master/img/omop-cdm.png" alt="OMOP-CDM" width="550" height="400"></center></p>
+<p><center><img src="https://github.com/mi-erasmusmc/OMOP-CDM-Course/raw/master/img/omop-cdm.png" alt="OMOP-CDM" width="550" height="400"></center></p>
 
 Suppose you have to extract all males that have had a bypass surgical procedure during a hospital visit. Which tables should you include in your query to do that?
 
@@ -96,7 +96,7 @@ There are a number of implicit and explicit conventions that have been adopted i
 
 ![alt text][logo]
 
-[logo]: https://github.com/PRijnbeek/VocabularyCourse/raw/master/img/conventions.png "Variable Name Conventions"
+[logo]: https://github.com/mi-erasmusmc/OMOP-CDM-Course/raw/master/img/conventions.png "Variable Name Conventions"
 
 Which of the following statements is true?
 
