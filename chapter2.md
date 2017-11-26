@@ -51,7 +51,9 @@ As you can see in the table above the concept\_ids in the CONCEPT table are not 
 
 
 --- type:PureMultipleChoiceExercise lang:sql xp:50 skills:1 key:a44bac8fdd
-## ATHENA
+## Athena
+
+<p><center><img src="https://github.com/mi-erasmusmc/OMOP-CDM-Course/raw/master/img/athena.png" alt="Athena" width="550" height="400"></center></p>
 
 Before we will run our own queries we like to introduce a very nice tool called <a href="http://athena.ohdsi.org" style="color:black">CONCEPT table</a>. This tool shows you the current vocabularies maintained by OHDSI.
 
