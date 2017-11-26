@@ -120,6 +120,8 @@ What is the vocabulary\_id of this concept?
 --- type:PureMultipleChoiceExercise lang:sql xp:50 skills:1 key:6654df47a2
 ## Vocabulary Table
 The VOCABULARY table includes the list of the included Vocabularies. This reference table is populated with a single record for each Vocabulary source and includes a descriptive name and other associated attributes for the Vocabulary.
+Have a look at the fields in the <a href="https://github.com/OHDSI/CommonDataModel/wiki/VOCABULARY" style="color:black">VOCABULARY table</a>. 
+
 
 Run the following query to see the content of this table:
 
@@ -189,7 +191,7 @@ WHERE LOWER(concept_name) like '%fibrillation%';
 
 
 --- type:PureMultipleChoiceExercise lang:sql xp:50 skills:1 key:4a115d0cb3
-## Concept Relationship
+## Concept Relationship (1)
 
 Records in the CONCEPT\_RELATIONSHIP table define semantic relationships between Concepts. Such relationships can be hierarchical or lateral.
 The figure below shows the concept relationships for the condition domain.
@@ -204,22 +206,94 @@ There are different types of relationships defined in the vocabulary. For exampl
 SELECT * FROM relationship;
 ```
 
-Let's use this new insight to find to which standard code the code '427.31' mappes. You can do this for example by first finding the concept\_id using:
+Let's use this new insight to find to which standard concept\_id the code '427.31' is mapped to. You can do this for example by first finding the concept\_id using:
 ```
-SELECT * FROM concept WHERE concept_code = '427.31';
-```
-
-You can the use the concept_relationshop table find its relationships.
-
-```
-SELECT * FROM concept_relationship WHERE concept_id_1 = 44821957;
+SELECT * FROM concept WHERE concept_code = '290.4';
 ```
 
+You can then use the concept_relationshop table find its relationships.
+
+```
+SELECT * FROM concept_relationship WHERE concept_id_1 = <fill in the concept_id>;
+```
+Check you understand what the Subsumes and Is a relationships are of this concept\_id.
+
+What is the concept\_id it maps to?
 *** =possible_answers
+- 44824105
+- 44821811 
+- [443605]
+- 44831079
 
 *** =hint
 
 *** =feedbacks
+- this is not the Maps to concept\_id
+- this is not the Maps to concept\_id
+- Correct. Well done.
+- this is the concept\_id of the source code
+
+
+--- type:PureMultipleChoiceExercise lang:sql xp:50 skills:1 key:6db04cb9b6
+## Concept Relationship (2)
+
+In the figure below you see three concept\_codes for three different source vocabularies. Can you figure out to which concept_id these map?
+
+<center><img src="https://github.com/mi-erasmusmc/OMOP-CDM-Course/raw/master/img/mapaf.png" alt="Atrial Fibrillation" width="450" height="300"></center>
+
+*** =possible_answers
+- 313217
+- [313217, 4154290]
+- 4154290
+- 443605
+
+*** =hint
+
+*** =feedbacks
+- Are you sure the figure is actually correct?
+- Indeed, the ICD10-CM code will rollup to 313217 through the hierarchy though.
+- No that is not right, check your query.
+- No that is not right, check your query.
+
+
+--- type:PureMultipleChoiceExercise lang:sql xp:50 skills:1 key:b5a2a2260c
+## Concept Relationship (3)
+It is kind of annoying that when you do query you only see unmeaningful concept\_id. Fortunately, SQL is much more powerful than we have discussed so far You can do a so-called join to link two tables. There are different types of joins but we will here only explain the often used inner-join. What does this mean? 
+
+<center><img src="https://github.com/mi-erasmusmc/OMOP-CDM-Course/raw/master/img/innerjoin.png" alt="Inner join" width="650" height="230"></center>
+
+On the left you see two tables with three rows, e.g. the CONCEPT_RELATIONSHIP table and the CONCEPT Table. What we do with the inner join is it matches pairs of observations whenever their keys are equal. The 'magic' is that in your result set you can use fields of both tables. Try the following query and see what happens:
+
+```
+SELECT cr.relationship_id, c.* 
+FROM concept_relationship cr 
+JOIN concept c ON cr.concept_id_2 = c.concept_id 
+WHERE cr.concept_id_1 = 313217;
+```
+
+That is really awesome and very handy!
+
+How many concept_ids have the relationship 'Mapped from' to the standard concept_id of 'Vascular Dementia'? Try not to manually count but think of a query to find this number.
+
+*** =possible_answers
+- 4
+- 6
+- [13]
+- 9
+
+*** =hint
+In SQL you can use count() as follows:
+```
+SELECT count(relationship_id)
+FROM concept_relationship
+WHERE concept_id_1 = 443605
+```
+
+*** =feedbacks
+- Wrong answer
+- Wrong answer
+- Correct. Did you use count()?
+- Wrong answer
 
 --- type:PureMultipleChoiceExercise lang:sql xp:50 skills:1 key:a44bac8fdd
 ## Athena
