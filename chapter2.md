@@ -294,6 +294,7 @@ WHERE concept_id_1 = 443605
 - Wrong answer
 - Correct. Did you use count()?
 - Wrong answer
+
 --- type:PureMultipleChoiceExercise lang:sql xp:50 skills:1 key:a44bac8fdd
 ## Athena
 
