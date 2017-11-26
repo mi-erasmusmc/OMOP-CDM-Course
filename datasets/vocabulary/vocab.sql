@@ -68,5 +68,4 @@ CREATE TABLE concept_ancestor (
 
 
 -- Copy over data from CSVs
-copy concept FROM 'data/vocab1/concept.csv' DELIMITER ',' CSV HEADER;
-
+\copy concept FROM 'data/vocabulary/concept.csv' DELIMITER ',' CSV HEADER;
