@@ -7,6 +7,7 @@ attachments :
 
 --- type:PureMultipleChoiceExercise lang:sql xp:50 skills:1 key:6087d6f53d
 ## Introduction
+
 In the figure below you see the so-called entity-relationship diagram highlighting the tables within the Standardized Vocabulary section in the CDM. This diagram illustrates how field in the tables are connected to each other. In each table you see a number of 'keys'. A 'red' key means that this is a so-called 'primary key', i.e. each value is unique and is used to reference the data. A 'green' key is a 'foreign key' which means it links to a primary key in another table, e.g. the foreign key vocabulary_id in the concept table refers to the primary key in the vocabulary table. The 'blue' keys represent primary keys that consists of multiple fields, i.e. the combination of these fields is unique and used to lookup data in the table.
 These constraints are enforced in a relational database to ensure the data integrity.
 
@@ -25,8 +26,6 @@ In the table below you can find a description of the tables we will discuss in m
 More detailed information about the data model can be found on the <a href="https://github.com/OHDSI/CommonDataModel/wiki/" style="color:black">Github Wiki</a>
 
 We will ask you to run a number of queries to train you in using these tables. You should have received seperate instructions on how to connect to our simulated database containing the latest vocabulary and data of 1000 patients (SYNPUF1000), or you can use your own CDM if you have access to it during the course.
-
-<b>Exercise</b>
 
 As you can see in the table above the concept\_ids in the CONCEPT table are not the original code of the terminolgy. Why are we not using the original SNOMED concept\_id if we use SNOMED as a our standard for example for the domain Conditions?
 
