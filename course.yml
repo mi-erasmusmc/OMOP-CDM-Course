@@ -1,10 +1,9 @@
 title: Fundamentals of the OMOP Common Data Model and Standardized Vocabularies
-description: This course aims to improve your understanding of the OMOP Common Data
-  Model (OMOP-CDM) and its Standardized Vocabularies. Using very simple SQL queries
-  we will help you to better understand the conventions of the OMOP-CDM and its table
+description: Healthcare data can vary greatly from one organization to the next. Data are collected for different purposes, such as provider reimbursement, clinical research, and direct patient care. These data may be stored in different formats using different database systems and information models. And despite the growing use of standard terminologies in healthcare, the same concept (e.g., blood glucose) may be represented in a variety of ways from one setting to the next.<p>This course aims to teach you the fundamentals of the OMOP Common Data
+  Model (OMOP-CDM) and its Standardized Vocabularies. We will help you to better understand the conventions of the OMOP-CDM and its table
   structure. We start with an introductory video about the Observation Health Data
   Sciences and Informatics (OHDSI) initiative and will then dive into the OMOP-CDM
-  and the Standardize Vocabularies.<p><center><img src="https://github.com/PRijnbeek/VocabularyCourse/raw/master/img/omop-cdm.png"
+  and the Standardized Vocabularies.</p><p><center><img src="https://github.com/PRijnbeek/VocabularyCourse/raw/master/img/omop-cdm.png"
   alt="OMOP-CDM" width="550" height="400"></center></p><p>For more information about
   OHDSI have a look at the <a href="https://ohdsi/org">OHDSI website</a>. Detailed
   information about the data model can be found on the <a href="https://github.com/OHDSI/CommonDataModel/wiki/">Github
