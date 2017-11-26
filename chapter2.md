@@ -34,7 +34,7 @@ As you can see in the table above the concept\_ids in the CONCEPT table are not 
 
 - The ids are long and will take unnecessary space in the CDM
 - We think we can make better codes
-- Other terminology systems may have the same code
+- [Other terminology systems may have the same code]
 - We perform a quality control step that requires new code assignment
 
 *** =hint
@@ -137,12 +137,15 @@ Which of the following statments is not true:
 - The vocabulary\_id=None shows the version of the vocab that is loaded
 - [OMOP does not invent new concepts but is only using concepts from other terminology systems]
 - The RxNorm Extension Vocabulary contains clinical drugs not on the American market
-- The current list of vocabularies is noy covering all concept used in the world yet
+- The current list of vocabularies is not final
 
 *** =hint
 
 *** =feedbacks
-
+- This is correct, have a look in the table
+- This is indeed the incorrect answer, we do add concepts for example for the domains because these are not available from other terminology systems
+- This is correct. RxNorm Extension is very actively being extended to cover for exampe all European drugs
+- This is correct, for example, more source vocabularies are added in Europe.
 
 --- type:PureMultipleChoiceExercise lang:sql xp:50 skills:1 key:c91862a449
 ## Search by concept_name
@@ -330,4 +333,4 @@ What is the ICD-10CM standard\_code for 'type 2 diabetes'? Can you find this by 
 - This the concept\_id
 - ICD-10CM?
 - This is the standard concept\_id
-- 
+
