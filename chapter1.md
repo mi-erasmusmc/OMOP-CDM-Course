@@ -141,7 +141,7 @@ From looking at the tabs, who is the first person listed in the `people` table?
 # The pre exercise code runs code to initialize the user's workspace.
 # You can use it to load packages, initialize datasets and draw a plot in the viewer
 
-connect('postgresql', 'vocabulary1')
+connect('postgresql', 'vocabulary2')
 ```
 
 `@instructions`
@@ -196,7 +196,7 @@ In the editor, change line 2 to `SELECT 'DataCamp <3 SQL'`.
 
 `@pre_exercise_code`
 ```{python}
-connect('postgresql', 'vocabulary1')
+connect('postgresql', 'vocabulary2')
 ```
 
 `@sample_code`
