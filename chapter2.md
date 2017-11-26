@@ -300,7 +300,7 @@ WHERE concept_id_1 = 443605
 
 
 --- type:PureMultipleChoiceExercise lang:sql xp:50 skills:1 key:b4ed6292c9
-## Concept Ancestor
+## Concept Ancestor (1)
 Chains of hierarchical relationships are recorded in the CONCEPT_ANCESTOR table. Ancestry relationships are only recorded between Standard Concepts that are valid (not deprecated) and are connected through valid and hierarchical relationships in the RELATIONSHIP table. So what does this really mean?
 
 <center><img src="https://github.com/mi-erasmusmc/OMOP-CDM-Course/raw/master/img/ancestor.png" alt="Inner join" width="650" height="380"></center>
@@ -321,7 +321,7 @@ WHERE ca.descendant_concept_id = 313217 /* Atrial fibrillation */
 ORDER BY max_levels_of_separation
 ```
 
-Can you now create a Query to find al the descendants of Heart Disease? Do you expect the number of returned concept_ids to be the same as in the previous query?
+Can you now create a query to find al the descendants of Heart Disease? Do you expect the number of returned concept_ids to be the same as in the previous query?
 
 *** =possible_answers
 - yes
@@ -331,6 +331,29 @@ Can you now create a Query to find al the descendants of Heart Disease? Do you e
 *** =feedbacks
 - Is Atrial Fibrillation the only type of Heart Disease?
 - Correct. There are many more type of Heart Disease.
+
+--- type:PureMultipleChoiceExercise lang:sql xp:50 skills:1 key:d13775fb57
+## Concept Ancestor (2)
+
+Now let's do a final bit more tricky question. I am looking for the standard concept\_id for Upper Gastrointestinal Bleeding.
+What is the correct concept_id?
+
+
+*** =possible_answers
+- [4291649]
+- 4000610
+- 4201745
+- 4332645
+
+*** =hint
+You can use %like% or use the hierarchy to find the correct concept\_id
+
+*** =feedbacks
+- well done.
+- is this the correct level in the hierarchy?
+- is this the correct level in the hierarchy?
+- is this the correct level in the hierarchy?
+
 --- type:PureMultipleChoiceExercise lang:sql xp:50 skills:1 key:a44bac8fdd
 ## Athena
 
