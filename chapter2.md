@@ -359,9 +359,9 @@ You can use %like% or use the hierarchy to find the correct concept\_id
 
 <p><img src="https://github.com/mi-erasmusmc/OMOP-CDM-Course/raw/master/img/Athena.png" alt="Athena" width="150" height="60"></p>
 
-Finally, we like to make you aware a very nice tool called ATHENA you can find <a href="http://athena.ohdsi.org" style="color:black">here</a>. This tool shows you the current vocabularies maintained by OHDSI. 
+Finally, we like to make you aware of a very nice tool called ATHENA you can find <a href="http://athena.ohdsi.org" style="color:black">here</a>. This tool shows you the current vocabularies maintained by OHDSI. 
 
-If you create an account it will allow you to download a new version of the vocabulary (no need to do this now, you can do this later if you want to). It will nicely archive all your previous downloads.
+If you create an account it will allow you to download a new version of the vocabulary (no need to do this now, you can do this later if you have to). It will nicely archive all your previous downloads.
 
 Let's explore the searching functionality a bit. Search for 'type 2 diabetes' and use the filters on the left to show only the Standard Concepts in the domain 'Condition'. You see many standard codes here which represent different levels in the hierarchy. 
 
