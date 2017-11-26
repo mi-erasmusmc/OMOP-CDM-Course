@@ -113,7 +113,7 @@ Which of the following statements is true?
 
 `@feedbacks`
 - All concepts are stored in the CONCEPT table. The VOCABULARY table includes a list of the Vocabularies collected from various sources or created de novo by the OMOP community.
-- The entity\_id is primary key for that table. The same id value could for exmaple occur for a visit\_occurrence\_id or a location\_id. 
+- The entity\_id is primary key for that table. The same id value could for exmaple occur for a visit\_occurrence\_id or a location\_id.
 - Only the verbatim text should be placed in the value field. The code should be place in the condition\_source\_id field which refers to a concept\_id in the CONCEPT table
 - We can still store this data in the provenance fields source\_value and source\_id (if there is a source code in the vocabulary)
 
@@ -141,7 +141,7 @@ From looking at the tabs, who is the first person listed in the `people` table?
 # The pre exercise code runs code to initialize the user's workspace.
 # You can use it to load packages, initialize datasets and draw a plot in the viewer
 
-connect('postgresql', 'vocabulary2')
+connect('postgresql', 'vocabulary3')
 ```
 
 `@instructions`
@@ -196,7 +196,7 @@ In the editor, change line 2 to `SELECT 'DataCamp <3 SQL'`.
 
 `@pre_exercise_code`
 ```{python}
-connect('postgresql', 'vocabulary2')
+connect('postgresql', 'vocabulary3')
 ```
 
 `@sample_code`
