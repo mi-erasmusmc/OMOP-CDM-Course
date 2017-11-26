@@ -49,6 +49,18 @@ As you can see in the table above the concept\_ids in the CONCEPT table are not 
 
 
 
+
+--- type:PureMultipleChoiceExercise lang:sql xp:50 skills:1 key:a44bac8fdd
+## ATHENA
+
+Before we will run our own queries we like to introduce a very nice tool called <a href="http://athena.ohdsi.org" style="color:black">CONCEPT table</a>. This tool shows you the current vocabularies maintained by OHDSI.
+
+*** =possible_answers
+
+*** =hint
+
+*** =feedbacks
+
 --- type:PureMultipleChoiceExercise lang:sql xp:50 skills:1 key:9eac36b5d7
 ## Your First Query
 
@@ -116,6 +128,19 @@ What is the vocabulary\_id of this concept?
 - Check your query
 - Check your query
 - Check your query
+
+
+--- type:PureMultipleChoiceExercise lang:sql xp:50 skills:1 key:6654df47a2
+## VOCABULARY Table
+The VOCABULARY table includes a list of the Vocabularies collected from various sources or created de novo by the OMOP community. This reference table is populated with a single record for each Vocabulary source and includes a descriptive name and other associated attributes for the Vocabulary.
+
+
+
+*** =possible_answers
+
+*** =hint
+
+*** =feedbacks
 
 --- type:PureMultipleChoiceExercise lang:sql xp:50 skills:1 key:c91862a449
 ## Search by concept_name
