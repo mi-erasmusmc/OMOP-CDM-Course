@@ -7,22 +7,53 @@ attachments :
 
 --- type:PureMultipleChoiceExercise lang:sql xp:50 skills:1 key:6087d6f53d
 ## Introduction
-In the figure below you see the table structure of the Standardized Vocabulary section in the CDM. This illustrates how tables are connected to each other (data model). In each table you see a number of 'keys'. A 'red' key means that this is a so-called 'primary key', i.e. each value is unique and is used to reference the data. A 'green' key is a 'foreign key' which means it links to a primary key in another table, e.g. the foreign key vocabulary_id in the concept table refers to the primary key in the vocabulary table. The 'blue' keys represent primary keys that consists of multiple fields, i.e. the combination of these fields is unique and used to lookup data in the table.
+In the figure below you see the so-called entity-relationship diagram highlighting the tables within the Standardized Vocabulary section in the CDM. This diagram illustrates how field in the tables are connected to each other. In each table you see a number of 'keys'. A 'red' key means that this is a so-called 'primary key', i.e. each value is unique and is used to reference the data. A 'green' key is a 'foreign key' which means it links to a primary key in another table, e.g. the foreign key vocabulary_id in the concept table refers to the primary key in the vocabulary table. The 'blue' keys represent primary keys that consists of multiple fields, i.e. the combination of these fields is unique and used to lookup data in the table.
+These constraints are enforced in a relational database to ensure the data integrity.
 
 ![alt text][logo]
 
-[logo]: hhttps://github.com/mi-erasmusmc/OMOP-CDM-Course/raw/master/img/vocabulary-cdm.png "Vocabulary Table Structure"
+[logo]: https://github.com/mi-erasmusmc/OMOP-CDM-Course/raw/master/img/vocabulary-cdm.png "Vocabulary Table Structure"
 
-In the course we will focus on the most important tables which are:
-CONCEPT: contains all concepts of all vocabularies
+In the table below you can find a description of the tables we will discuss in more detail in this course (marked in green boxes in the figure above):
+| Table  | Description |
+|---|---|
+| CONCEPT | Contains all the terminologies. The key is a newly created concept_id, not the original code of the terminology.  | 
+| CONCEPT_ANCESTOR | Chains of hierarchical relationships are recorded in the CONCEPT\_ANCESTOR table. Ancestry relationships are only recorded between Standard Concepts that are valid (not deprecated) and are connected through valid and hierarchical relationships in the RELATIONSHIP table (flag defines_ancestry) |
+| CONCEPT_RELATIONSHIP | Records in the CONCEPT\_RELATIONSHIP table define semantic relationships between Concepts. Such relationships can be hierarchical or lateral. 
+| VOCABULARY | The VOCABULARY table includes a list of the Vocabularies collected from various sources or created de novo by the OMOP community. This reference table is populated with a single record for each Vocabulary source and includes a descriptive name and other associated attributes for the Vocabulary. |
 
-CONCEPT_RELATIONSHIP: contains all hierarchical relationships among concepts
+More detailed information about the data model can be found on the <a href="https://github.com/OHDSI/CommonDataModel/wiki/" style="color:black">Github Wiki</a>
 
-CONCEPT_ANCESTOR: table that contains multi-step hierarchical relationships. This table
 
-We will ask you to run a number of simple queries to train you in using these tables.
+We will ask you to run a number of queries to train you in using these tables. You should have received seperate instructions on how to connect to our simulated database containing the latest vocabulary and data of 1000 patients (SYNPUF1000), or you can use your own CDM if you have access to it during the course.
 
-Let's start very simple. Try to find the the concept\_name of concept\_id = 313217 using the query below.
+<b>Exercise</b>
+
+As you can see in the table above the concept\_ids in the CONCEPT table are not the original code of the terminolgy. Why are we not using the original SNOMED concept\_id if we use SNOMED as a our standard for example for the domain Conditions?
+
+*** =possible_answers
+
+- The ids are long and will take unnecessary space in the CDM
+- We think we can make better codes
+- Other terminology systems may have the same code
+- We perform a quality control step that requires new code assignment
+
+*** =hint
+
+*** =feedbacks
+
+- This will have no major effect on the CDM size
+- Definitely not, we value the effort done by others and re-use this as much as possible
+- Correct. You will see some examples later on in the course
+- We do perform quality control steps but this is not the reason for defining our own codes.
+
+
+
+--- type:PureMultipleChoiceExercise lang:sql xp:50 skills:1 key:9eac36b5d7
+## Your First Query
+
+First, have a look at the fields in the <a href="https://github.com/OHDSI/CommonDataModel/wiki/CONCEPT" style="color:black">CONCEPT table</a>. 
+Then run your first query against the CDM to find the concept\_name of concept\_id = 313217:
 
 ```
 SELECT * 
