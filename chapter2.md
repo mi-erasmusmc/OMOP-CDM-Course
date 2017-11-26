@@ -298,6 +298,39 @@ WHERE concept_id_1 = 443605
 - Correct. Did you use count()?
 - Wrong answer
 
+
+--- type:PureMultipleChoiceExercise lang:sql xp:50 skills:1 key:b4ed6292c9
+## Concept Ancestor
+Chains of hierarchical relationships are recorded in the CONCEPT_ANCESTOR table. Ancestry relationships are only recorded between Standard Concepts that are valid (not deprecated) and are connected through valid and hierarchical relationships in the RELATIONSHIP table. So what does this really mean?
+
+<center><img src="https://github.com/mi-erasmusmc/OMOP-CDM-Course/raw/master/img/ancestor.png" alt="Inner join" width="650" height="380"></center>
+
+The figure shows for the concept Atrial fibrillation the different hierarchical relationships. A concept has descendants (more specific) and ancestors (more general), for example Heart Disease is an ancestor of Atrial Fibrillation and is separated by 4 levels. This hierarchy is very powerful since it allows you to automatically include all the descendants if you build a cohort of people.
+
+You could use the CONCEPT\_RELATIONSHIP table to traverse to the hierarchy but the queries for this are quite complicated and may take a long time to run. The CONCEPT_ANCESTOR table is designed to simplify observational analysis by providing the complete hierarchical relationships between Concepts. It contains the relationships with all the parents of concept.
+
+Have a look at the fields in the <a href="https://github.com/OHDSI/CommonDataModel/wiki/CONCEPT_ANCESTOR" style="color:black">CONCEPT_ANCESTOR table</a>. 
+
+So how can we use this? The query below finds all the ancestors of Atrial fibrillation, try to run it.
+
+```
+SELECT max_levels_of_separation, c.* 
+FROM concept_ancestor ca, concept c
+WHERE ca.descendant_concept_id = 313217 /* Atrial fibrillation */ 
+	AND ca.ancestor_concept_id = c.concept_id 
+ORDER BY max_levels_of_separation
+```
+
+Can you now create a Query to find al the descendants of Heart Disease? Do you expect the number of returned concept_ids to be the same as in the previous query?
+
+*** =possible_answers
+- yes
+- [no]
+*** =hint
+
+*** =feedbacks
+- Is Atrial Fibrillation the only type of Heart Disease?
+- Correct. There are many more type of Heart Disease.
 --- type:PureMultipleChoiceExercise lang:sql xp:50 skills:1 key:a44bac8fdd
 ## Athena
 
