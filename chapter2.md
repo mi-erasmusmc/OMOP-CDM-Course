@@ -273,18 +273,27 @@ WHERE cr.concept_id_1 = 313217;
 
 That is really awesome and very handy!
 
-How many concept_ids have the relationship 'Mapped from'? Try not to manually count but think of a query to find this number.
+How many concept_ids have the relationship 'Mapped from' to the standard concept_id of 'Vascular Dementia'? Try not to manually count but think of a query to find this number.
 
 *** =possible_answers
 - 4
 - 6
-- [7]
+- [13]
 - 9
 
 *** =hint
+In SQL you can use count() as follows:
+```
+SELECT count(relationship_id)
+FROM concept_relationship
+WHERE concept_id_1 = 443605
+```
 
 *** =feedbacks
-
+- Wrong answer
+- Wrong answer
+- Correct. Did you use count()?
+- Wrong answer
 --- type:PureMultipleChoiceExercise lang:sql xp:50 skills:1 key:a44bac8fdd
 ## Athena
 
