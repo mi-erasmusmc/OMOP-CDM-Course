@@ -221,52 +221,10 @@ Which of the following statements is true?
 
 `@feedbacks`
 - All concepts are stored in the CONCEPT table. The VOCABULARY table includes a list of the Vocabularies collected from various sources or created de novo by the OMOP community.
-- The entity\_id is primary key for that table. The same id value could for exmaple occur for a visit\_occurrence\_id or a location\_id.
+- The entity\_id is primary key for that table. The same id value could for example occur for a visit\_occurrence\_id or a location\_id.
 - Only the verbatim text should be placed in the value field. The code should be place in the condition\_source\_id field which refers to a concept\_id in the CONCEPT table
 - The best practive is to still store this data in the provenance fields source\_value and source\_id (if there is a source code in the vocabulary)
 
----
 
-## Onboarding | Tables
 
-```yaml
-type: MultipleChoiceExercise
-lang: sql
-xp: 50
-skills: 1
-key: e5ea66e23d
-```
-TO BE REMOVED UNTIL we have a full vocab linked up in DataCamp!!
-
-If you've used DataCamp to learn [R](https://www.datacamp.com/courses/free-introduction-to-r) or [Python](https://www.datacamp.com/courses/intro-to-python-for-data-science), you'll be familiar with the interface. For SQL, however, there are a few new features you should be aware of.
-
-For this course, you'll be using a database containing information on almost 5000 films. To the right, underneath the editor, you can see the data in this database by clicking through the tabs.
-
-From looking at the tabs, who is the first person listed in the `people` table?
-
-`@pre_exercise_code`
-```{python}
-# The pre exercise code runs code to initialize the user's workspace.
-# You can use it to load packages, initialize datasets and draw a plot in the viewer
-
-connect('postgresql', 'vocabulary3')
-```
-
-`@instructions`
-- Kanye West
-- Biggie Smalls
-- 50 Cent
-- Jay Z
-
-`@hint`
-Look at the `people` tab under the editor!
-
-`@sct`
-```{python}
-# SCT written with sqlwhat: https://github.com/datacamp/sqlwhat/wiki
-msg_bad = 'Nope, look at the `people` table!'
-msg_success = 'Correct!'
-
-Ex().test_mc(3,[msg_bad, msg_bad, msg_success, msg_bad])
-```
 
