@@ -72,7 +72,7 @@ What is the correct answer?
 *** =feedbacks
 
 - Check your query
-- You did you first query against the Vocabulary!
+- You did you first query against the Vocabulary
 - Check your query
 - Check your query
 
@@ -384,6 +384,7 @@ Can you find the concept\_id of the active compound Warfarin by keyword in the v
 
 --- type:PureMultipleChoiceExercise lang:sql xp:50 skills:1 key:0b2aca79c5
 ## Drug Hierarchy (2)
+
 As for the conditions you can also use the CONCEPT\_RELATIONSHIP table to find standard concept\_ids.
 
 Can you find the concept\_class\_id of the standard concept that 'Maps to' Bristol Meyer Squibb's  Plavix 75mg capsules: NDC 67544050474?
@@ -396,7 +397,7 @@ Can you find the concept\_class\_id of the standard concept that 'Maps to' Brist
 - Chemical Structure
 
 *** =hint
-First find its concept\_id and then search for 'Maps to' using the CONCEPT_RELATIONSHIP table
+First find its concept\_id and then search for 'Maps to' using the CONCEPT\_RELATIONSHIP table
 
 *** =feedbacks
 - Wrong answer
