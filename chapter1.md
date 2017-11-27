@@ -178,8 +178,9 @@ skills: 1
 `@possible_answers`
 - define lookback period
 - define followup period
+- [to find all persons with at least] 
 - denominator for population prevalence
-- [to find all persons with at least one observation] 
+
 
 `@hint`
 
