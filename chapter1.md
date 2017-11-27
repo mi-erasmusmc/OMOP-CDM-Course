@@ -99,7 +99,7 @@ Suppose you have to extract all males that have had a bypass surgical procedure 
 - PROCEDURE\_OCCURRENCE, PERSON
 - VISIT\_OCCURRENCE, PROCEDURE\_OCCURRENCE
 - VISIT\_OCCURRENCE, PERSON
-- [PROCEDURE\_OCCURRENCE, PERSON, VISIT\_OCCURRENCE, CONCEPT]
+- [PROCEDURE\_OCCURRENCE, PERSON, VISIT\_OCCURRENCE]
 
 `@hint`
 Detailed information about the data model can be found on the <a href="https://github.com/OHDSI/CommonDataModel/wiki/" style="color:black">Github Wiki</a>
