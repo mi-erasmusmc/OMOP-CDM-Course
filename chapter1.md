@@ -32,12 +32,14 @@ The current version of the CDM (v5.2) is shown in the figure below.
 
 <p><center><img src="https://github.com/mi-erasmusmc/OMOP-CDM-Course/raw/master/img/omop-cdm.png" alt="OMOP-CDM" width="550" height="400"></center></p>
 
-As you can see the OMOP-CDM is divided in multiple sections. Clinical Data is stored in the Standardized Clinical Data section on the left (light blue). The clinical data tables are based on the data domains, e.g. condition, measurement. The Standardized Vocabulary tables are group in the orange box on the right.
+As you can see the OMOP-CDM is divided in multiple sections. Clinical Data is stored in the Standardized Clinical Data section on the left (light blue). The clinical data tables are domain-oriented, e.g. condition\_occurrence, measurement\_occurrence. The Standardized Vocabulary tables are grouped in the orange box on the right. The real power of the CDM is the blend between the data model and the conceptual model, called an information model. This strongly improves the inter-operability of the datasources as you will experience in this course.
 
-Which of the following statements is true?
+You can find all information about the OMOP-CDM and its tables on the <a href="https://github.com/OHDSI/CommonDataModel/wiki/" style="color:black">Github Wiki</a>
+
+Which of the following statements is true? Feel free to try each of them to get valuable feedback.
 
 `@possible_answers`
-- This type of model is called an informatics model
+- The model does not preserves data provenance
 - The clinical data tables contain clinical concepts in human readible form
 - [This is a patient centric model]
 - The model is now final and will be used as is in the future
@@ -45,7 +47,7 @@ Which of the following statements is true?
 `@hint`
 
 `@feedbacks`
-- A blend of a conceptual model and a data model is called an information model
+- We stored all source\_codes and values in the CDM in addition to the standard concept\_ids
 - Only concept\_ids are stored in the clinical data tables, e.g. 8507 = male
 - Correct Answer. All the clinical data tables have a link to the person table
 - The model is evolving over time. This is driven by new use cases and input by the active OHDSI community
