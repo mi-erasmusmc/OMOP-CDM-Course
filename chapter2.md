@@ -105,6 +105,7 @@ What is the vocabulary\_id of this concept?
 - ICD-9
 - DPD
 - RXNORM
+
 *** =hint
 
 *** =feedbacks
@@ -396,11 +397,12 @@ Can you find the concept\_class\_id of the standard concept that 'Maps to' Brist
 
 *** =hint
 First find its concept\_id and then search for 'Maps to' using the CONCEPT_RELATIONSHIP table
+
 *** =feedbacks
- - Wrong answer
- - Wrong answer
- - Well done!
- - Wrong answer
+- Wrong answer
+- Wrong answer
+- Well done!
+- Wrong answer
 
 
 
