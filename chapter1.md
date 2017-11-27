@@ -101,7 +101,7 @@ On the wiki you can see that a person can occur only once in this table. This al
 
 `@feedbacks`
 - Not correct, the other domains have fields for this as well. For example, a condition\_occurrence can be associated with its own care_site, provider etc.
-- Correct, the other domains have fields for this as well. For example, a condition\_occurrence can be associated with its own care\_site, provider etc. It is true the person can have only one location of residence in the current version of the CDM. However, if there is a good use case for this kind of time-varying information we can easily extend the CDM.
+- Correct, the other domains have fields for this as well. For example, a condition\_occurrence can be associated with its own care\_site, provider etc. It is true the person can have only one location of residence in the current version of the CDM. However, if there is a good use case for this kind of time varying information we can easily extend the CDM.
 
 ---
 ## Measurement Table
