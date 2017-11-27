@@ -52,6 +52,30 @@ Which of the following statements is true? Feel free to try each of them to get 
 - Correct Answer. All the clinical data tables have a link to the person table
 - The model is evolving over time. This is driven by new use cases and input by the active OHDSI community
 
+
+---
+## Loading the data in the CDM
+A fist step is that the source data will have to be stored in the CDM. This process is called Extraction Transform Load (ETL).
+Do you know what drives the choice of the domain to store your data?
+
+```yaml
+type: PureMultipleChoiceExercise
+key: ac3583f08b
+lang: sql
+xp: 50
+skills: 1
+```
+
+`@possible_answers`
+- a human expert
+- the source data
+- the concept damain in the Standardized Vocabularies
+- your personal preference
+
+`@hint`
+
+`@feedbacks`
+
 ---
 ## Person Table
 The central table in the CDM is the person table. All other Standardized Clinical Data tables have a key (person\_id) that refers to this table. You can see all the fields in this table below and can find detailed information <a href="https://github.com/OHDSI/CommonDataModel/wiki/PERSON" style="color:black">here</a>. 
@@ -78,6 +102,34 @@ skills: 1
 `@feedbacks`
 - Not correct, the other domains have fields for this as well. For example, a condition\_occurrence can be associated with its own care_site, provider etc.
 - Correct, the other domains have fields for this as well. For example, a condition\_occurrence can be associated with its own care\_site, provider etc. It is true the person can have only one location of residence in the current version of the CDM. However, if there is a good use case for this kind of time-varying information we can easily extend the CDM.
+
+---
+## Measurement Table
+
+The MEASUREMENT table contains records of Measurement, i.e. structured values (numerical or categorical) obtained through systematic and standardized examination or testing of a Person or Person's sample. The MEASUREMENT table contains both orders and results of such Measurements as laboratory tests, vital signs, quantitative findings from pathology reports, etc.
+
+Measurements differ from Observations in that they require a standardized test or some other activity to generate a quantitative or qualitative result. For example, LOINC 1755-8 concept_id 3027035 'Albumin [Mass/time] in 24 hour Urine' is the lab test to measure a certain chemical in a urine sample.
+
+Is it true that all measurements in the measurement table have a mandatory value?
+
+```yaml
+type: PureMultipleChoiceExercise
+key: 0485643d60
+lang: sql
+xp: 50
+skills: 1
+```
+
+
+`@possible_answers`
+- Yes
+- No
+`@hint`
+
+`@feedbacks`
+- Incorrect. The vaue is not mandatory you should store the fact that the measurement was performed in this table as well.
+- Correct. The vaue is not mandatory you should store the fact that the measurement was performed in this table as well.
+
 ---
 
 ## Finding data (1)
@@ -109,6 +161,30 @@ Detailed information about the data model can be found on the <a href="https://g
 - How do you extract the male?
 - How do you find the hospital visit
 - Indeed you need all these tables in you query.
+
+---
+## Finding data (2)
+
+What is not a valid use of the observation\_period table?
+
+```yaml
+type: PureMultipleChoiceExercise
+key: 3a45604228
+lang: sql
+xp: 50
+skills: 1
+```
+
+`@possible_answers`
+- define loopback period
+- define followup period
+- denominator for population prevalence
+- 
+
+`@hint`
+
+`@feedbacks`
+
 ---
 ## Variable Name Conventions
 
@@ -142,7 +218,7 @@ Which of the following statements is true?
 - All concepts are stored in the CONCEPT table. The VOCABULARY table includes a list of the Vocabularies collected from various sources or created de novo by the OMOP community.
 - The entity\_id is primary key for that table. The same id value could for exmaple occur for a visit\_occurrence\_id or a location\_id.
 - Only the verbatim text should be placed in the value field. The code should be place in the condition\_source\_id field which refers to a concept\_id in the CONCEPT table
-- We can still store this data in the provenance fields source\_value and source\_id (if there is a source code in the vocabulary)
+- The best practive is to still store this data in the provenance fields source\_value and source\_id (if there is a source code in the vocabulary)
 
 ---
 
