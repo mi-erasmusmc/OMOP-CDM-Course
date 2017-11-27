@@ -165,8 +165,6 @@ Detailed information about the data model can be found on the <a href="https://g
 ---
 ## Finding data (2)
 
-What is not a valid use of the observation\_period table?
-
 ```yaml
 type: PureMultipleChoiceExercise
 key: 3a45604228
@@ -174,13 +172,15 @@ lang: sql
 xp: 50
 skills: 1
 ```
+The OBSERVATION_PERIOD table contains records which uniquely define the spans of time for which a Person is at-risk to have clinical events recorded within the source systems, even if no events in fact are recorded (healthy patient with no healthcare interactions).
+
+What is not a valid use of the observation\_period table?
 
 `@possible_answers`
 - define lookback period
 - define followup period
-- [to find all persons with at least] 
 - denominator for population prevalence
-
+- [to find all persons with at least one observation]
 
 `@hint`
 
