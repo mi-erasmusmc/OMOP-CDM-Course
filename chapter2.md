@@ -405,9 +405,6 @@ First find its concept\_id and then search for 'Maps to' using the CONCEPT\_RELA
 - Well done!
 - Wrong answer
 
-
-
-
 --- type:PureMultipleChoiceExercise lang:sql xp:50 skills:1 key:c32cdad37f
 ## Drug Hierarchy (3)
 In the previous exercise we found Clopidogrel as a drug product. We are now interested in the ingredient Clopidogrel and we like you to find this using the CONCEPT_ANCESTOR table.
