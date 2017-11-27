@@ -123,7 +123,7 @@ skills: 1
 
 `@possible_answers`
 - Yes
-- No
+- [No]
 `@hint`
 
 `@feedbacks`
