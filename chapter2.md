@@ -7,7 +7,7 @@ attachments :
 --- type:PureMultipleChoiceExercise lang:sql xp:50 skills:1 key:6087d6f53d
 ## Introduction
 
-In the figure below you see the so-called entity-relationship diagram highlighting the tables within the Standardized Vocabulary section in the CDM. This diagram illustrates how field in the tables are connected to each other. In each table you see a number of 'keys'. A 'red' key means that this is a so-called 'primary key', i.e. each value is unique and is used to reference the data. A 'green' key is a 'foreign key' which means it links to a primary key in another table, e.g. the foreign key vocabulary_id in the concept table refers to the primary key in the vocabulary table. The 'blue' keys represent primary keys that consists of multiple fields, i.e. the combination of these fields is unique and used to lookup data in the table.
+In the figure below you see the so-called entity-relationship diagram highlighting the tables within the Standardized Vocabulary section in the CDM. This diagram illustrates how field in the tables are connected to each other. In each table you see a number of 'keys'. A 'red' key means that this is a so-called 'primary key', i.e. each value is unique and is used to reference the data. A 'green' key is a 'foreign key' which means it links to a primary key in another table, e.g. the foreign key vocabulary\_id in the concept table refers to the primary key in the vocabulary table. The 'blue' keys represent primary keys that consists of multiple fields, i.e. the combination of these fields is unique and used to lookup data in the table.
 These constraints are enforced in a relational database to ensure the data integrity.
 
 ![alt text][logo]
@@ -17,8 +17,8 @@ These constraints are enforced in a relational database to ensure the data integ
 In the table below you can find a description of the tables we will discuss in more detail in this course (marked in green boxes in the figure above):
 | Table  | Description |
 |---|---|
-| CONCEPT | Contains all the terminologies. The key is a newly created concept_id, not the original code of the terminology.  | 
-| CONCEPT_ANCESTOR | Chains of hierarchical relationships are recorded in the CONCEPT\_ANCESTOR table. Ancestry relationships are only recorded between Standard Concepts that are valid (not deprecated) and are connected through valid and hierarchical relationships in the RELATIONSHIP table (flag defines_ancestry) |
+| CONCEPT | Contains all the terminologies. The key is a newly created concept\_id, not the original code of the terminology.  | 
+| CONCEPT_ANCESTOR | Chains of hierarchical relationships are recorded in the CONCEPT\_ANCESTOR table. Ancestry relationships are only recorded between Standard Concepts that are valid (not deprecated) and are connected through valid and hierarchical relationships in the RELATIONSHIP table (flag defines\_ancestry) |
 | CONCEPT_RELATIONSHIP | Records in the CONCEPT\_RELATIONSHIP table define semantic relationships between Concepts. Such relationships can be hierarchical or lateral. 
 | VOCABULARY | The VOCABULARY table includes a list of the Vocabularies collected from various sources or created de novo by the OMOP community. This reference table is populated with a single record for each Vocabulary source and includes a descriptive name and other associated attributes for the Vocabulary. |
 
@@ -26,7 +26,7 @@ More detailed information about the data model can be found on the <a href="http
 
 We will ask you to run a number of queries to train you in using these tables. You should have received seperate instructions on how to connect to our simulated database containing the latest vocabulary and data of 1000 patients (SYNPUF1000), or you can use your own CDM if you have access to it during the course.
 
-As you can see in the table above the concept\_ids in the CONCEPT table are not the original code of the terminolgy. Why are we not using the original SNOMED concept\_id if we use SNOMED as a our standard for example for the domain Conditions?
+As you can see in the table above the concept\_ids in the CONCEPT table are not the original code of the terminolgy. Why are we not using the original SNOMED concept\_id if we use SNOMED as our standard for Conditions?
 
 *** =possible_answers
 
@@ -109,7 +109,7 @@ What is the vocabulary\_id of this concept?
 *** =hint
 
 *** =feedbacks
-- Note that the vocabulary\_ids are available in readible format! 
+- Note that the vocabulary\_ids are available in readable format! 
 - Check your query
 - Check your query
 - Check your query
@@ -128,7 +128,7 @@ SELECT *
 FROM vocabulary
 ```
 
-Which of the following statments is not true:
+Which of the following statements is not true:
 
 *** =possible_answers
 
@@ -142,13 +142,13 @@ Which of the following statments is not true:
 *** =feedbacks
 - This is correct, have a look in the table
 - This is indeed the incorrect answer, we do add concepts for example for the domains because these are not available from other terminology systems
-- This is correct. RxNorm Extension is very actively being extended to cover for exampe all European drugs
+- This is correct. RxNorm Extension is very actively being extended to cover for example all European drugs
 - This is correct, for example, more source vocabularies are added in Europe.
 
 --- type:PureMultipleChoiceExercise lang:sql xp:50 skills:1 key:c91862a449
 ## Search by concept_name
 
-Normally you do not know these concept values by heart and you like to search by concept_name.
+Normally you do not know these concept values by heart and you like to search by concept\_name.
 This can be done in several ways as illustrated below.
 
 A. Extract by full name. Run the query below to see the results.
@@ -173,7 +173,7 @@ FROM concept
 WHERE LOWER(concept_name) like '%fibrillation%';
 ```
 
- Let's try to find the standard concept\_id for the clinical finding Asthma in the vocabulary. Try to find this using both methods described above. You will see that if you do not restrict to the concep\_class\_id = 'Clinical Finding' (AND concept\_class\_id = 'Clinical Finding') you can get multple standard concepts!
+ Let's try to find the standard concept\_id for the clinical finding Asthma in the vocabulary. Try to find this using both methods described above. You will see that if you do not restrict to the concept\_class\_id = 'Clinical Finding' (AND concept\_class\_id = 'Clinical Finding') you can get multiple standard concepts!
  
  What is the code we asked for?
 
@@ -199,9 +199,9 @@ The figure below shows the concept relationships for the condition domain.
 
 <center><img src="https://github.com/mi-erasmusmc/OMOP-CDM-Course/raw/master/img/hierarchy1.png" alt="Concept Relationship" width="550" height="400"></center>
 
-This shows that all non-standard vocabularies map to the Standard SNOMED vocabulary at different levels. The figure also shows the MEDRA vocabulary which is used for a higher 'Classification' level (denoted as 'C' in the standard_concept field in the concept table).
+This shows that all non-standard vocabularies map to the Standard SNOMED vocabulary at different levels. The figure also shows the MEDRA vocabulary which is used for a higher 'Classification' level (denoted as 'C' in the standard\_concept field in the concept table).
 
-There are different types of relationships defined in the vocabulary. For example the 'Maps to' relationship defines to witch Standard Concept\_id the codes mappes to. You can explore all the relationships by running the following query:
+There are different types of relationships defined in the vocabulary. For example the 'Maps to' relationship defines to witch Standard Concept\_id the codes maps to. You can explore all the relationships by running the following query:
 
 ```
 SELECT * FROM relationship;
@@ -238,7 +238,7 @@ What is the concept\_id it maps to?
 --- type:PureMultipleChoiceExercise lang:sql xp:50 skills:1 key:6db04cb9b6
 ## Concept Relationship (2)
 
-In the figure below you see three concept\_codes for three different source vocabularies. Can you figure out to which concept_id these map?
+In the figure below you see three concept\_codes for three different source vocabularies. Can you figure out to which concept\_id these map?
 
 <center><img src="https://github.com/mi-erasmusmc/OMOP-CDM-Course/raw/master/img/mapaf.png" alt="Atrial Fibrillation" width="450" height="300"></center>
 
@@ -259,7 +259,7 @@ In the figure below you see three concept\_codes for three different source voca
 
 --- type:PureMultipleChoiceExercise lang:sql xp:50 skills:1 key:b5a2a2260c
 ## Concept Relationship (3)
-It is kind of annoying that when you do query you only see unmeaningful concept\_id. Fortunately, SQL is much more powerful than we have discussed so far You can do a so-called join to link two tables. There are different types of joins but we will here only explain the often used inner-join. What does this mean? 
+It is kind of annoying that when you do query you only see concept\_ids. Fortunately, SQL is much more powerful than we have discussed so far You can do a so-called join to link two tables. There are different types of joins but we will here only explain the often used inner-join. What does this mean? 
 
 <center><img src="https://github.com/mi-erasmusmc/OMOP-CDM-Course/raw/master/img/innerjoin.png" alt="Inner join" width="650" height="230"></center>
 
@@ -274,7 +274,7 @@ WHERE cr.concept_id_1 = 313217;
 
 That is really awesome and very handy!
 
-How many concept_ids have the relationship 'Mapped from' to the standard concept_id of 'Vascular Dementia'? Try not to manually count but think of a query to find this number.
+How many concept_ids have the relationship 'Mapped from' to the standard concept\_id of 'Vascular Dementia'? Try not to manually count but think of a query to find this number.
 
 *** =possible_answers
 - 4
@@ -361,7 +361,7 @@ The figure below shows this in a bit more depth.
 
 <center><img src="https://github.com/mi-erasmusmc/OMOP-CDM-Course/raw/master/img/drughierarchy.png" alt="Drug Hierarchy" width="650" height="430"></center>
 
-As you can see the source vocabularies, e.g. Multilex role up to the standard terminologie system RxNorm at different levels. Here there are several classification systems, e.g. ATC.
+As you can see the source vocabularies, e.g. Multilex role up to the standard terminology system RxNorm at different levels. Here there are several classification systems, e.g. ATC.
 
 The search for specific drugs we use the exact same tables as we have used before.
 
@@ -411,7 +411,7 @@ First find its concept\_id and then search for 'Maps to' using the CONCEPT\_RELA
 --- type:PureMultipleChoiceExercise lang:sql xp:50 skills:1 key:c32cdad37f
 ## Drug Hierarchy (3)
 In the previous exercise we found Clopidogrel as a drug product. We are now interested in the ingredient Clopidogrel and we like you to find this using the CONCEPT_ANCESTOR table.
-Order your results by max_levels_of_separation as in the figure below. 
+Order your results by max\_levels\_of\_separation as in the figure below. 
 
 <center><img src="https://github.com/mi-erasmusmc/OMOP-CDM-Course/raw/master/img/clopidogrel.png" alt="Clopidogrel" width="650" height="150"></center>
 
@@ -437,7 +437,7 @@ The ingredient is an ancestor of the drug product
 
 Finally, we like to make you aware of a very nice tool called ATHENA you can find <a href="http://athena.ohdsi.org" style="color:black">here</a>. This tool shows you the current vocabularies maintained by OHDSI and allows you to download it to populate your vocabulary tables. It will nicely archive all your previous downloads.
 
-You can use Athena to browse the vocabulary, but note that this is the latest community version of the vocabulary which may be different from the one you are using in you local CDM. It does therfore not give you information about the record count.
+You can use Athena to browse the vocabulary, but note that this is the latest community version of the vocabulary which may be different from the one you are using in you local CDM. It does therefore not give you information about the record count.
 
 
 Let's explore the searching functionality a bit because it does have some nice feature you may not be aware of. Search for 'type 2 diabetes' and use the filters on the left to show only the Standard Concepts in the domain 'Condition'. You see many standard codes here which represent different levels in the hierarchy. 
@@ -448,7 +448,7 @@ Try to find some other concepts you are interested in and play around with the t
 
 <b> Question: </b>
 
-What is the ICD-10CM standard\_code for 'type 2 diabetes'? Can you find this by using filter or the hierachy and related_concepts information of the standard concept?
+What is the ICD-10CM standard\_code for 'type 2 diabetes'? Can you find this by using filter or the hierarchy and related\_concepts information of the standard concept?
 
 
 *** =possible_answers
