@@ -382,29 +382,6 @@ Can you find the concept\_id of the active compound Warfarin by keyword in the v
 *** =feedbacks
 
 
---- type:PureMultipleChoiceExercise lang:sql xp:50 skills:1 key:0b2aca79c5
-## Drug Hierarchy (2)
-
-As for the conditions you can also use the CONCEPT\_RELATIONSHIP table to find standard concept\_ids.
-
-Can you find the concept\_class\_id of the standard concept that 'Maps to' Bristol Meyer Squibb's  Plavix 75mg capsules: NDC 67544050474?
-
-
-*** =possible_answers
-- Ingredient
-- Substance
-- [Branded Drug]
-- Chemical Structure
-
-*** =hint
-First find its concept\_id and then search for 'Maps to' using the CONCEPT\_RELATIONSHIP table
-
-*** =feedbacks
-- Wrong answer
-- Wrong answer
-- Well done!
-- Wrong answer
-
 
 
 
