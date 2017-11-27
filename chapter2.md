@@ -172,7 +172,7 @@ FROM concept
 WHERE LOWER(concept_name) like '%fibrillation%';
 ```
 
- Let's try to find the standard concept\_id for the clinical finding Asthma in the vocabulary. Try to find this using both methods described above. You will see that if you do not restrict to the concept_class_id = 'Clinical Finding' (AND concept_class_id = 'Clinical Finding') you can get multple standard concepts!
+ Let's try to find the standard concept\_id for the clinical finding Asthma in the vocabulary. Try to find this using both methods described above. You will see that if you do not restrict to the concep\_class\_id = 'Clinical Finding' (AND concept\_class\_id = 'Clinical Finding') you can get multple standard concepts!
  
  What is the code we asked for?
 
@@ -332,7 +332,7 @@ Can you now create a query to find al the descendants of Heart Disease? Do you e
 --- type:PureMultipleChoiceExercise lang:sql xp:50 skills:1 key:d13775fb57
 ## Concept Ancestor (2)
 
-Now let's do a final bit more tricky question. I am looking for the standard concept\_id for Upper Gastrointestinal Bleeding.
+Now let's do a final bit more tricky question. I am looking for the standard concept\_id for upper gastrointestinal bleeding.
 What is the correct concept_id?
 
 
@@ -383,7 +383,7 @@ Can you find the concept\_id of the active compound Warfarin by keyword in the v
 
 --- type:PureMultipleChoiceExercise lang:sql xp:50 skills:1 key:0b2aca79c5
 ## Drug Hierarchy (2)
-As for the conditions you can also use the CONCEPT_RELATIONSHIP table to find standard concept\_ids.
+As for the conditions you can also use the CONCEPT\_RELATIONSHIP table to find standard concept\_ids.
 
 Can you find the concept\_class\_id of the standard concept that 'Maps to' Bristol Meyer Squibb's  Plavix 75mg capsules: NDC 67544050474?
 
