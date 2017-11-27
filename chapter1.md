@@ -69,7 +69,7 @@ skills: 1
 `@possible_answers`
 - a human expert
 - the source data
-- the concept damain in the Standardized Vocabularies
+- [the concept damain in the Standardized Vocabularies]
 - your personal preference
 
 `@hint`
