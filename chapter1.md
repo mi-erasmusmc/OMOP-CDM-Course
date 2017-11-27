@@ -2,7 +2,7 @@
 title       : The OMOP Common Data Model
 description : You will learn more about the CDM data structure and will understand which tables to query to retrieve the necessary data for your research questions.
 attachments :
-  slides_link : https://s3.amazonaws.com/assets.datacamp.com/course/teach/slides_example.pdf
+  slides_link : 
 
 --- type:VideoExercise lang:sql xp:50 skills:1 key:7b121737a5
 ## Introduction OHDSI
