@@ -176,14 +176,18 @@ skills: 1
 ```
 
 `@possible_answers`
-- define loopback period
+- define lookback period
 - define followup period
 - denominator for population prevalence
-- 
+- [to find all persons with at least one observation] 
 
 `@hint`
 
 `@feedbacks`
+- you do use the observation\_period table for this purpose
+- you do use the observation\_period table for this purpose
+- you do use the observation\_period table for this purpose
+- indeed, observation periods define the spans of time a person is eligible to have recorded clinical observations, but does not require that one or more observations are actually observed
 
 ---
 ## Variable Name Conventions
