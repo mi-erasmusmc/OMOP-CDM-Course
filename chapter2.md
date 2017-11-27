@@ -4,7 +4,6 @@ description : During this part of the course we will be studying the OHDSI Stand
 attachments :
   slides_link : 
 
-
 --- type:PureMultipleChoiceExercise lang:sql xp:50 skills:1 key:6087d6f53d
 ## Introduction
 
