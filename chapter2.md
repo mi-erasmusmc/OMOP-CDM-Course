@@ -356,7 +356,7 @@ You can use %like% or use the hierarchy to find the correct concept\_id
 --- type:PureMultipleChoiceExercise lang:sql xp:50 skills:1 key:8d4ac9039a
 ## Drug Hierarchy (1)
 
-Let's now have a look at the drugs. How do these fit in the Standardized Vocabularies? Drugs have also different types of source vocabularies, they have different hierarchical levels, and relationships.
+How do the drugs fit in the Standardized Vocabularies? In the same way, drugs have also different types of source vocabularies, they have different hierarchical levels, and relationships.
 The figure below shows this in a bit more depth.
 
 <center><img src="https://github.com/mi-erasmusmc/OMOP-CDM-Course/raw/master/img/drughierarchy.png" alt="Drug Hierarchy" width="650" height="430"></center>
@@ -424,10 +424,10 @@ Order your results by max_levels_of_separation as in the figure below.
 *** =hint
 The ingredient is an ancestor of the drug product
 *** =feedbacks
- - Wrong answer
- - Wrong answer
- - Wrong answer
- - Well done!
+- Wrong answer
+- Wrong answer
+- Wrong answer
+- Well done!
 
 --- type:PureMultipleChoiceExercise lang:sql xp:50 skills:1 key:a44bac8fdd
 ## Athena
