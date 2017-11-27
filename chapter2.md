@@ -353,6 +353,82 @@ You can use %like% or use the hierarchy to find the correct concept\_id
 - is this the correct level in the hierarchy?
 - is this the correct level in the hierarchy?
 
+
+--- type:PureMultipleChoiceExercise lang:sql xp:50 skills:1 key:8d4ac9039a
+## Drug Hierarchy (1)
+
+Let's now have a look at the drugs. How do these fit in the Standardized Vocabularies? Drugs have also different types of source vocabularies, they have different hierarchical levels, and relationships.
+The figure below shows this in a bit more depth.
+
+<center><img src="https://github.com/mi-erasmusmc/OMOP-CDM-Course/raw/master/img/drughierarchy.png" alt="Drug Hierarchy" width="650" height="430"></center>
+
+As you can see the source vocabularies, e.g. Multilex role up to the standard terminologie system RxNorm at different levels. Here there are several classification systems, e.g. ATC.
+
+The search for specific drugs we use the exact same tables as we have used before.
+
+Can you find the concept\_id of the active compound Warfarin by keyword in the vocabulary?
+
+*** =possible_answers
+- [1310149]
+- 40772658
+- 21600975
+- 45618204
+
+*** =hint
+- Correct!
+- This is not an ingredient
+- This is not an ingredient
+- This is not an ingredient
+
+*** =feedbacks
+
+
+--- type:PureMultipleChoiceExercise lang:sql xp:50 skills:1 key:0b2aca79c5
+## Drug Hierarchy (2)
+As for the conditions you can also use the CONCEPT_RELATIONSHIP table to find standard concept\_ids.
+
+Can you find the concept\_class\_id of the standard concept that 'Maps to' Bristol Meyer Squibb's  Plavix 75mg capsules: NDC 67544050474?
+
+
+*** =possible_answers
+- Ingredient
+- Substance
+- [Branded Drug]
+- Chemical Structure
+
+*** =hint
+First find its concept\_id and then search for 'Maps to' using the CONCEPT_RELATIONSHIP table
+*** =feedbacks
+ - Wrong answer
+ - Wrong answer
+ - Well done!
+ - Wrong answer
+
+
+
+
+--- type:PureMultipleChoiceExercise lang:sql xp:50 skills:1 key:c32cdad37f
+## Drug Hierarchy (3)
+In the previous exercise we found Clopidogrel as a drug product. We are now interested in the ingredient Clopidogrel and we like you to find this using the CONCEPT_ANCESTOR table.
+Order your results by max_levels_of_separation as in the figure below. 
+
+<center><img src="https://github.com/mi-erasmusmc/OMOP-CDM-Course/raw/master/img/clopidogrel.png" alt="Clopidogrel" width="650" height="150"></center>
+
+
+*** =possible_answers
+- 40095879
+- 36222254
+- 4279519
+- [1322184]
+
+*** =hint
+The ingredient is an ancestor of the drug product
+*** =feedbacks
+ - Wrong answer
+ - Wrong answer
+ - Wrong answer
+ - Well done!
+
 --- type:PureMultipleChoiceExercise lang:sql xp:50 skills:1 key:a44bac8fdd
 ## Athena
 
