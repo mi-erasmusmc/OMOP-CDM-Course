@@ -52,7 +52,32 @@ Which of the following statements is true? Feel free to try each of them to get 
 - Correct Answer. All the clinical data tables have a link to the person table
 - The model is evolving over time. This is driven by new use cases and input by the active OHDSI community
 
+---
+## Person Table
+The central table in the CDM is the person table. All other Standardized Clinical Data tables have a key (person\_id) that refers to this table. You can see all the fields in this table below and can find detailed information <a href="https://github.com/OHDSI/CommonDataModel/wiki/PERSON" style="color:black">here</a>. 
 
+<p><center><img src="https://github.com/mi-erasmusmc/OMOP-CDM-Course/raw/master/img/persontable.png" alt="OMOP-CDM" width="300" height="400"></center></p> 
+
+On the wiki you can see that a person can occur only once in this table. This also suggests a person can have only one location, provider, care\_site. Does this mean we cannot track different care providers, care_sites etc over time? 
+
+```yaml
+type: PureMultipleChoiceExercise
+key: e7bce3227c
+lang: sql
+xp: 50
+skills: 1
+```
+
+
+`@possible_answers`
+- Yes
+- [No]
+
+`@hint`
+
+`@feedbacks`
+- Not correct, the other domains have fields for this as well. For example, a condition\_occurrence can be associated with its own care_site, provider etc.
+- Correct, the other domains have fields for this as well. For example, a condition\_occurrence can be associated with its own care\_site, provider etc. It is true the person can have only one location of residence in the current version of the CDM. However, if there is a good use case for this kind of time-varying information we can easily extend the CDM.
 ---
 
 ## Finding data (1)
@@ -68,12 +93,12 @@ Let's see if you know which tables you need to query to find your data elements 
 
 <p><center><img src="https://github.com/mi-erasmusmc/OMOP-CDM-Course/raw/master/img/omop-cdm.png" alt="OMOP-CDM" width="550" height="400"></center></p>
 
-Suppose you have to extract all males that have had a bypass surgical procedure during a hospital visit. Which tables should you include in your query to do that?
+Suppose you have to extract all males that have had a bypass surgical procedure during a hospital visit. Which clinical tables should you include in your query to do that?
 
 `@possible_answers`
 - PROCEDURE\_OCCURRENCE, PERSON
 - VISIT\_OCCURRENCE, PROCEDURE\_OCCURRENCE
-- PROCEDURE\_OCCURRENCE, PERSON, CONCEPT
+- VISIT\_OCCURRENCE, PERSON
 - [PROCEDURE\_OCCURRENCE, PERSON, VISIT\_OCCURRENCE, CONCEPT]
 
 `@hint`
