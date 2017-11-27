@@ -46,7 +46,6 @@ As you can see in the table above the concept\_ids in the CONCEPT table are not 
 - We do perform quality control steps but this is not the reason for defining our own codes.
 
 
-
 --- type:PureMultipleChoiceExercise lang:sql xp:50 skills:1 key:9eac36b5d7
 ## Your First Query
 
@@ -430,15 +429,16 @@ The ingredient is an ancestor of the drug product
  - Well done!
 
 --- type:PureMultipleChoiceExercise lang:sql xp:50 skills:1 key:a44bac8fdd
-## Athena
+## Athena (1)
 
 <p><img src="https://github.com/mi-erasmusmc/OMOP-CDM-Course/raw/master/img/Athena.png" alt="Athena" width="150" height="60"></p>
 
-Finally, we like to make you aware of a very nice tool called ATHENA you can find <a href="http://athena.ohdsi.org" style="color:black">here</a>. This tool shows you the current vocabularies maintained by OHDSI. 
+Finally, we like to make you aware of a very nice tool called ATHENA you can find <a href="http://athena.ohdsi.org" style="color:black">here</a>. This tool shows you the current vocabularies maintained by OHDSI and allows you to download it to populate your vocabulary tables. It will nicely archive all your previous downloads.
 
-If you create an account it will allow you to download a new version of the vocabulary (no need to do this now, you can do this later if you have to). It will nicely archive all your previous downloads.
+You can use Athena to browse the vocabulary, but note that this is the latest community version of the vocabulary which may be different from the one you are using in you local CDM. It does therfore not give you information about the record count.
 
-Let's explore the searching functionality a bit. Search for 'type 2 diabetes' and use the filters on the left to show only the Standard Concepts in the domain 'Condition'. You see many standard codes here which represent different levels in the hierarchy. 
+
+Let's explore the searching functionality a bit because it does have some nice feature you may not be aware of. Search for 'type 2 diabetes' and use the filters on the left to show only the Standard Concepts in the domain 'Condition'. You see many standard codes here which represent different levels in the hierarchy. 
 
 Search for '201826' and click on it. You can now see the hierarchy and related concepts retrieved from the vocabulary tables. 
 
