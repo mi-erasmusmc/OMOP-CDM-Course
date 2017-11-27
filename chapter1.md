@@ -34,7 +34,7 @@ The current version of the CDM (v5.2) is shown in the figure below.
 
 As you can see the OMOP-CDM is divided in multiple sections. Clinical Data is stored in the Standardized Clinical Data section on the left (light blue). The clinical data tables are domain-oriented, e.g. condition\_occurrence, measurement\_occurrence. The Standardized Vocabulary tables are grouped in the orange box on the right. The real power of the CDM is the blend between the data model and the conceptual model, called an information model. This strongly improves the inter-operability of the datasources as you will experience in this course.
 
-You can find all information about the OMOP-CDM and its tables on the <a href="https://github.com/OHDSI/CommonDataModel/wiki/" style="color:black">Github Wiki</a>
+You can find all information about the OMOP-CDM and its tables on the <a href="https://github.com/OHDSI/CommonDataModel/wiki/" style="color:black">Github Wiki</a>. We suggest you take some time now to explore this wiki page.
 
 Which of the following statements is true? Feel free to try each of them to get valuable feedback.
 
@@ -55,8 +55,6 @@ Which of the following statements is true? Feel free to try each of them to get 
 
 ---
 ## Loading the data in the CDM
-A fist step is that the source data will have to be stored in the CDM. This process is called Extraction Transform Load (ETL).
-Do you know what drives the choice of the domain to store your data?
 
 ```yaml
 type: PureMultipleChoiceExercise
@@ -65,6 +63,8 @@ lang: sql
 xp: 50
 skills: 1
 ```
+A fist step is that the source data will have to be stored in the CDM. This process is called Extraction Transform Load (ETL).
+Do you know what drives the choice of the domain to store the data?
 
 `@possible_answers`
 - a human expert
@@ -78,11 +78,6 @@ skills: 1
 
 ---
 ## Person Table
-The central table in the CDM is the person table. All other Standardized Clinical Data tables have a key (person\_id) that refers to this table. You can see all the fields in this table below and can find detailed information <a href="https://github.com/OHDSI/CommonDataModel/wiki/PERSON" style="color:black">here</a>. 
-
-<p><center><img src="https://github.com/mi-erasmusmc/OMOP-CDM-Course/raw/master/img/persontable.png" alt="OMOP-CDM" width="300" height="400"></center></p> 
-
-On the wiki you can see that a person can occur only once in this table. This also suggests a person can have only one location, provider, care\_site. Does this mean we cannot track different care providers, care_sites etc over time? 
 
 ```yaml
 type: PureMultipleChoiceExercise
@@ -91,6 +86,11 @@ lang: sql
 xp: 50
 skills: 1
 ```
+The central table in the CDM is the person table. All other Standardized Clinical Data tables have a key (person\_id) that refers to this table. You can see all the fields in this table below and can find detailed information <a href="https://github.com/OHDSI/CommonDataModel/wiki/PERSON" style="color:black">here</a>. 
+
+<p><center><img src="https://github.com/mi-erasmusmc/OMOP-CDM-Course/raw/master/img/persontable.png" alt="OMOP-CDM" width="300" height="400"></center></p> 
+
+On the wiki you can see that a person can occur only once in this table. This also suggests a person can have only one provider or care\_site. Does this mean we cannot track different care providers, care_sites over time? 
 
 
 `@possible_answers`
@@ -106,11 +106,6 @@ skills: 1
 ---
 ## Measurement Table
 
-The MEASUREMENT table contains records of Measurement, i.e. structured values (numerical or categorical) obtained through systematic and standardized examination or testing of a Person or Person's sample. The MEASUREMENT table contains both orders and results of such Measurements as laboratory tests, vital signs, quantitative findings from pathology reports, etc.
-
-Measurements differ from Observations in that they require a standardized test or some other activity to generate a quantitative or qualitative result. For example, LOINC 1755-8 concept_id 3027035 'Albumin [Mass/time] in 24 hour Urine' is the lab test to measure a certain chemical in a urine sample.
-
-Is it true that all measurements in the measurement table have a mandatory value?
 
 ```yaml
 type: PureMultipleChoiceExercise
@@ -119,6 +114,11 @@ lang: sql
 xp: 50
 skills: 1
 ```
+The MEASUREMENT table contains records of Measurement, i.e. structured values (numerical or categorical) obtained through systematic and standardized examination or testing of a Person or Person's sample. The MEASUREMENT table contains both orders and results of such Measurements as laboratory tests, vital signs, quantitative findings from pathology reports, etc.
+
+Measurements differ from Observations in that they require a standardized test or some other activity to generate a quantitative or qualitative result. For example, LOINC 1755-8 concept_id 3027035 'Albumin [Mass/time] in 24 hour Urine' is the lab test to measure a certain chemical in a urine sample.
+
+Is it true that all measurements in the measurement table have a value?
 
 
 `@possible_answers`
@@ -141,7 +141,7 @@ lang: sql
 xp: 50
 skills: 1
 ```
-Let's see if you know which tables you need to query to find your data elements of interest. We will test this by asking you to name all the tables you need to include in your query for a certain research question. We will not go into the details of really creating the full query here. (MORE OF THESE TO ADD WITH PATRICK)
+Let's see if you know which tables you need to query to find your data elements of interest. We will test this by asking you to name all the clinical tables you need to include in your query for a certain research question. We will not go into the details of really creating the full query here. 
 
 <p><center><img src="https://github.com/mi-erasmusmc/OMOP-CDM-Course/raw/master/img/omop-cdm.png" alt="OMOP-CDM" width="550" height="400"></center></p>
 
@@ -157,7 +157,7 @@ Suppose you have to extract all males that have had a bypass surgical procedure 
 Detailed information about the data model can be found on the <a href="https://github.com/OHDSI/CommonDataModel/wiki/" style="color:black">Github Wiki</a>
 
 `@feedbacks`
-- How do you find the hospital visit and the bypass?
+- How do you find the hospital visit?
 - How do you extract the male?
 - How do you find the hospital visit
 - Indeed you need all these tables in you query.
