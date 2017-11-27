@@ -430,7 +430,7 @@ The ingredient is an ancestor of the drug product
  - Well done!
 
 --- type:PureMultipleChoiceExercise lang:sql xp:50 skills:1 key:a44bac8fdd
-## Athena (1)
+## Athena
 
 <p><img src="https://github.com/mi-erasmusmc/OMOP-CDM-Course/raw/master/img/Athena.png" alt="Athena" width="150" height="60"></p>
 
